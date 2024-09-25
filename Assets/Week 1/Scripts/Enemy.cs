@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     int armor;
 
     //variables 4 
-    int damageSender;
+    int damageReceiver;
 
     //variables 5 
     int speedAttack;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     //Method 2
     void EnemyAttack() { }
     //Method 3
-    void EnemyDamageSender() { }
+    void EnemyDamageReceiver() { }
     //Method 4
     void EnemyDeath() { }
     //Method 5
