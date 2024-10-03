@@ -43,7 +43,7 @@ public class ForeachPractise : MonoBehaviour
             Debug.Log(i);
         }
     }
-    
+
     // Bài Tập 2: Tính Tổng Các Phần Tử Trong Mảng
     void BaiTap2()
     {
@@ -65,11 +65,11 @@ public class ForeachPractise : MonoBehaviour
         Debug.Log("---------- 3 -----------");
         // Tạo một mảng số nguyên
         int[] numbers = { 2, 3, 15, 7, 4 };
-        int max  = numbers[0];
+        int max = numbers[0];
         // Sử dụng foreach để tìm phần tử lớn nhất trong mảng
-        foreach(int i in numbers)
+        foreach (int i in numbers)
         {
-            if(max >=i) continue;
+            if (max >= i) continue;
             max = i;
         }
         Debug.Log("Max numbers = " + max);
@@ -96,7 +96,18 @@ public class ForeachPractise : MonoBehaviour
     {
         Debug.Log("---------- 5 -----------");
         // Tạo một danh sách các chuỗi
+        List<string> stringList = new List<string>();
+
+        stringList.Add("Apple");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Cherry");
+        stringList.Add("Apricot");
         // Sử dụng foreach để in tất cả các chuỗi trong danh sách
+        foreach (string str in stringList)
+        {
+            Debug.Log($"{str}");
+        }
     }
 
     // Bài Tập 6: Tìm Chuỗi Dài Nhất Trong Danh Sách
@@ -104,7 +115,20 @@ public class ForeachPractise : MonoBehaviour
     {
         Debug.Log("---------- 6 -----------");
         // Tạo một danh sách các chuỗi
+        List<string> stringList = new List<string>();
+        string longestString = "";
+
+        stringList.Add("Apple");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Cherry");
         // Sử dụng foreach để tìm chuỗi dài nhất trong danh sách
+        foreach(string str in stringList)
+        {
+            if (longestString.Length >= str.Length) continue;
+            longestString = str;
+        }
+        Debug.Log(longestString);
     }
 
     // Bài Tập 7: Tính Tổng Các Số Lẻ Trong Mảng
@@ -134,7 +158,7 @@ public class ForeachPractise : MonoBehaviour
         foreach (int i in numbers)
         {
             if ((i % 2) != 0) continue;
-            Debug.Log("even Number in char = " +  i);
+            Debug.Log("even Number in char = " + i);
         }
     }
 
@@ -149,11 +173,11 @@ public class ForeachPractise : MonoBehaviour
         // Sử dụng foreach để kiểm tra xem phần tử đó có tồn tại trong mảng không
         foreach (int i in numbers)
         {
-            if(numberCheck != i) continue;
+            if (numberCheck != i) continue;
             count++;
             Debug.Log(numberCheck + " in char");
         }
-        if(count == 0)
+        if (count == 0)
         {
             Debug.Log(numberCheck + " not in char");
         }
@@ -193,72 +217,192 @@ public class ForeachPractise : MonoBehaviour
     void BaiTap12()
     {
         // Tạo một danh sách các chuỗi
+        Debug.Log("---------- 12 -----------");
+        List<string> stringList = new List<string>();
+        
+
+        stringList.Add("Apple");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Cherry");
+
+        string shoterString = stringList[3];
         // Sử dụng foreach để tìm chuỗi có độ dài ngắn nhất trong danh sách
+        foreach (string str in stringList)
+        {
+            if (shoterString.Length <= str.Length) continue;
+            shoterString = str;
+        }
+        Debug.Log(shoterString);
     }
 
     // Bài Tập 13: Nhân Đôi Tất Cả Các Phần Tử Trong Mảng
     void BaiTap13()
     {
+        Debug.Log("---------- 13 -----------");
         // Tạo một mảng số nguyên
         int[] numbers = { 2, 3, 15, -7, 4, 21 };
+        int[] numbersx2 = new int[numbers.Length];
+        int j = 0;
+
         // Sử dụng foreach để nhân đôi tất cả các phần tử trong mảng
-        foreach(int i in numbers)
+        foreach (int i in numbers)
         {
-            for (int j = 0; j < numbers.Length; j++)
-            {
-                numbers[j] = i * 2;
-                Debug.Log(numbers[j]);
-            }
+            numbersx2[j] = i*2;
+            j++;
+        }
+        foreach (int i in numbersx2)
+        {
+            Debug.Log(i);
         }
     }
 
     // Bài Tập 14: Tìm Số Lớn Thứ Hai Trong Mảng
     void BaiTap14()
     {
+        Debug.Log("---------- 14 -----------");
+
+        int[] numbers = { 2, 3, 15, -7, 4, 21 };
         // Tạo một mảng số nguyên
+        int max = numbers[0];
+        int maxSecon = numbers[0];
+        foreach (int i in numbers)
+        {
+            if (max >= i) continue;
+            max = i;
+        }
+
         // Sử dụng foreach để tìm phần tử lớn thứ hai trong mảng
+        foreach (int i in numbers)
+        {
+            if (maxSecon >= i || i == max) continue;
+            maxSecon = i;
+        }
+        Debug.Log(maxSecon);
     }
 
     // Bài Tập 15: Tìm Chuỗi Bắt Đầu Bằng Chữ Cái A
     void BaiTap15()
     {
         // Tạo một danh sách các chuỗi
+        Debug.Log("---------- 15 -----------");
+        List<string> stringList = new List<string>();
+
+
+        stringList.Add("Apple");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Cherry");
         // Sử dụng foreach để tìm và in các chuỗi bắt đầu bằng chữ cái 'A'
+        foreach (string str in stringList)
+        {
+            for(int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != 'A') break;
+                Debug.Log(str);
+            }
+        }
     }
 
     // Bài Tập 16: Kiểm Tra Xem Danh Sách Có Chứa Một Chuỗi Cụ Thể Không
     void BaiTap16()
     {
         // Tạo một danh sách các chuỗi
+        Debug.Log("---------- 15 -----------");
+        List<string> stringList = new List<string>();
+
+
+        stringList.Add("Apple");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Cherry");
+        string strCheck = "Hello";
+        int count = 0;
         // Sử dụng foreach để kiểm tra xem danh sách có chứa chuỗi "Hello" hay không
+        foreach (string str in stringList)
+        {
+            if (str != strCheck) continue;
+            count++;
+        }
+        if(count == 0)
+        {
+            Debug.Log("No string Hello");
+        }
+        else
+        {
+            Debug.Log("Yes string Hello");
+        }
     }
 
     // Bài Tập 17: In Tất Cả Các Phần Tử Âm Trong Mảng
     void BaiTap17()
     {
+        Debug.Log("---------- 17 -----------");
         // Tạo một mảng số nguyên
+        int[] numbers = { 2, -3, 15, -7, 4, 21 };
+
         // Sử dụng foreach để in ra tất cả các phần tử âm trong mảng
+        foreach (int i in numbers)
+        {
+            if (i >= 0) continue;
+            Debug.Log(i);
+        }
     }
 
     // Bài Tập 18: Đếm Số Lần Xuất Hiện Của Một Phần Tử Trong Mảng
     void BaiTap18()
     {
+        Debug.Log("---------- 18 -----------");
         // Tạo một mảng số nguyên và một phần tử cụ thể
-        // Sử dụng foreach để đếm số lần xuất hiện của phần tử cụ thể đó trong mảng
+        int[] numbers = { 2, -3, 15, -7, 4, 21, 4, 4 };
+        int number = 4;
+        int countNumber = 0;
+        // Sử dụng foreach để đếm số lần xuất hiện của phần tử cụ thể đó trong
+        foreach(int i in numbers)
+        {
+            if( i !=  number) continue;
+            countNumber++; 
+        }
+        Debug.Log("count Number 4 = " + countNumber);
     }
 
     // Bài Tập 19: Tạo Một Danh Sách Mới Từ Các Phần Tử Lớn Hơn 10 Trong Mảng
     void BaiTap19()
     {
+        Debug.Log("---------- 19 -----------");
         // Tạo một mảng số nguyên
+        int[] numbers = { 2, -3, 15, -7, 4, 21, 41, 14 };
+        List<int> listNumber = new List<int>();
         // Sử dụng foreach để tạo một danh sách mới chứa các phần tử có giá trị lớn hơn 10
+        foreach (int i in numbers)
+        {
+            if(i<=10 ) continue;
+            listNumber.Add(i);
+        }
+        foreach (int i in listNumber)
+        {
+            Debug.Log(i);
+        }
     }
 
     // Bài Tập 20: In Các Chuỗi Có Độ Dài Lớn Hơn 5 Ký Tự
     void BaiTap20()
     {
+        Debug.Log("---------- 20 -----------");
         // Tạo một danh sách các chuỗi
+
+        List<string> stringList = new List<string>();
+
+        stringList.Add("Ape");
+        stringList.Add("Banana");
+        stringList.Add("Avocado");
+        stringList.Add("Chry");
         // Sử dụng foreach để in các chuỗi có độ dài lớn hơn 5 ký tự
+        foreach (string str in stringList)
+        {
+            if (str.Length <= 5) continue;
+            Debug.Log(str);
+        }
     }
 
 }
