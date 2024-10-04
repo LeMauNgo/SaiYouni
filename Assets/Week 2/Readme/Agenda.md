@@ -1,6 +1,7 @@
 # Agenda Phát Triển Game Week 2
 
 ## 1. Kể Tên 3 Hàm Màu Xanh (Blue) Mà Unity Sẽ Tự Động Gọi
+ - Start, Update, FixdUpdate, Awake, OnEnable, OnDisable
 
 ## 2. Kể Tên 5 Loại Giải Thuật Sắp Xếp Khác Nhau
 
