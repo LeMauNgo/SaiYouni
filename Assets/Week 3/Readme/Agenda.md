@@ -22,7 +22,9 @@
 - Tìm và đánh giá thêm 2 trang web cung cấp asset để làm phong phú nguồn tài nguyên cho dự án.
 - Một số trang web có thể tham khảo bao gồm:
   - **CGTrader**: Chuyên cung cấp asset 3D.
+	- Gần như không có animation , nhiều tài nguyên free, phù hợp làm các vật tĩnh trang trí
   - **TurboSquid**: Một trang web uy tín với nhiều asset cho các dự án game và phim.
+	- có animation nhưng khá ít tài nguyên free
 - Xem xét độ tương thích của các asset với Unity và dự án hiện tại.
 
 ## 5. Hỏi AI Cách Sử Dụng Nav Mesh Obstacle
