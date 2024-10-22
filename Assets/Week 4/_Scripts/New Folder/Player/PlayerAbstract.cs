@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerAbstract : MyBehaviour
 {
-    [SerializeField] protected EnemyCtrl enemyCtrl;
+    [SerializeField] protected PlayerCtrl enemyCtrl;
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        this.LoadEnemyCtrl();
+        this.LoadPlayerCtrl();
     }
-    protected virtual void LoadEnemyCtrl()
+    protected virtual void LoadPlayerCtrl()
     {
         if (enemyCtrl != null) return;
-        this.enemyCtrl = GetComponentInParent<EnemyCtrl>();
-        Debug.Log("LoadEnemyCtrl", gameObject);
+        this.enemyCtrl = GetComponentInParent<PlayerCtrl>();
+        Debug.Log("LoadPlayerCtrl", gameObject);
     }
 }
