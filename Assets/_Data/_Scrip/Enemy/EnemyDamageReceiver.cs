@@ -30,11 +30,25 @@ public class EnemyDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         //throw new System.NotImplementedException();
+        this.enemyCtrl.EnemyStateMachine.ChangeState(EnemyState.Death);
+        this.enemyCtrl.Agent.enabled = false;
+        Invoke(nameof(OnRagDoll), 3);
+        this.gameObject.SetActive(false);
     }
 
     protected override void OnHurt()
     {
         //throw new System.NotImplementedException();
-        this.enemyCtrl.Animator.SetInteger("Status", 2);
+        this.enemyCtrl.EnemyStateMachine.ChangeState(EnemyState.Hit);
+        Invoke(nameof(OffHurt), 2.05f);
+    }
+    protected virtual void OffHurt()
+    {
+        if (this.enemyCtrl.EnemyStateMachine.EnemyState != EnemyState.Hit) return;
+        this.enemyCtrl.EnemyStateMachine.ChangeState(EnemyState.Walk);
+    }
+    protected virtual void OnRagDoll()
+    {
+        this.enemyCtrl.EnemyRagDoll.SetRagdollState(true);
     }
 }

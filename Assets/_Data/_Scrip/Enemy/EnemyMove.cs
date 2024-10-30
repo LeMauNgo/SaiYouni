@@ -16,7 +16,7 @@ public class EnemyMove : EnemyAbstract
         base.LoadComponent();
         this.LoadPathCtrl();
     }
-    void LoadPathCtrl()
+    protected virtual void LoadPathCtrl()
     {
         if (pathCtrl != null) return;
         this.pathCtrl = GameObject.Find("PathMoving_0").GetComponent<PathCtrl>();
@@ -28,11 +28,12 @@ public class EnemyMove : EnemyAbstract
     }
     protected virtual void Moving()
     {
-        this.MovingStatus();
+        if (this.enemyCtrl.EnemyStateMachine.EnemyState != EnemyState.Walk) return;
+        //this.MovingStatus();
         if(isFinish)
         {
             this.enemyCtrl.Agent.isStopped = true;
-            this.enemyCtrl.Animator.SetInteger("Status", 0);
+            this.enemyCtrl.EnemyStateMachine.ChangeState(EnemyState.Idel);
             return;
         }
         this.currentPoint = this.pathCtrl.GetPoint(currnetPointIndex);
@@ -48,6 +49,6 @@ public class EnemyMove : EnemyAbstract
     }
     protected virtual void MovingStatus()
     {
-        this.enemyCtrl.Animator.SetInteger("Status", 1);
+        this.enemyCtrl.EnemyStateMachine.ChangeState(EnemyState.Walk);
     }
 }

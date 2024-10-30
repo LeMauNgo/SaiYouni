@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Targetable : MyBehaviour
+
+public enum EnemyState 
 {
+    Idel,
+    Walk,
+    Hit,
+    Death
 }

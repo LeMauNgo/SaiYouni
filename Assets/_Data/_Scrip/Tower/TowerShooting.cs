@@ -7,7 +7,7 @@ public class TowerShooting : TowerAbstract
     [SerializeField] protected EffectCtrl bullet;
     [SerializeField] protected EnemyCtrl target;
     [SerializeField] protected float timer;
-    [SerializeField] protected int delay = 1;
+    [SerializeField] protected float delay = 1;
     [SerializeField] protected List<FirePoint> firePoints;
     private void Update()
     {

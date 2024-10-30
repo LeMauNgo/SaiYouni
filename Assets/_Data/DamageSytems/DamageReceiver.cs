@@ -14,8 +14,10 @@ public abstract class DamageReceiver : MyBehaviour
         if (!this.isImmotal) this.currentHP -= damage;
         if (this.currentHP < 0) this.currentHP = 0;
 
-        if (this.IsDead()) this.OnDead();
-        else this.OnHurt();
+        if (this.IsDead())
+            OnDead();
+        else
+            OnHurt();
     }
 
     public virtual bool IsDead()

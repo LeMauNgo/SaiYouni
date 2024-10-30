@@ -37,7 +37,7 @@ public class TowerRada : MyBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Targetable targetable = other.GetComponent<Targetable>();
+        EnemyDamageReceiver targetable = other.GetComponent<EnemyDamageReceiver>();
         if (targetable == null) return;
 
         this.AddEnemy(targetable);
@@ -50,7 +50,7 @@ public class TowerRada : MyBehaviour
 
         this.RemoveEnemy(enemy);
     }
-    protected virtual void AddEnemy(Targetable targetable)
+    protected virtual void AddEnemy(EnemyDamageReceiver targetable)
     {
         EnemyCtrl enemy = targetable.GetComponentInParent<EnemyCtrl>();
         if (enemy == null) return;
@@ -65,12 +65,21 @@ public class TowerRada : MyBehaviour
         if(this.enemies.Count == 0) this.nearest = null;
         float enemyDistance;
         float enemyMinDistance = Mathf.Infinity;
-        foreach (EnemyCtrl enemy in this.enemies)
+        List<EnemyCtrl> tempEnemies = new List<EnemyCtrl>(this.enemies);
+        foreach (EnemyCtrl enemy in tempEnemies)
         {
-            enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (enemyDistance > enemyMinDistance) continue;
-            enemyMinDistance = enemyDistance;
-            this.nearest = enemy;
+            if (enemy == null) continue;
+            if (enemy.EnemyStateMachine.EnemyState == EnemyState.Death)
+            {
+                this.RemoveEnemy(enemy);
+            }
+            else
+            {
+                enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (enemyDistance > enemyMinDistance) continue;
+                enemyMinDistance = enemyDistance;
+                this.nearest = enemy;
+            }
         }
     }
     public virtual EnemyCtrl GetEnemy()

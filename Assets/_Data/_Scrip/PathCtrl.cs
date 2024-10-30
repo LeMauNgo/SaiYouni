@@ -15,7 +15,7 @@ public class PathCtrl : MyBehaviour
     {
         if (this.points.Count > 0) return;
         foreach (Transform t in transform)
-        { 
+        {
             points.Add(t);
         }
         Debug.Log("LoadPoints", gameObject);
@@ -25,3 +25,4 @@ public class PathCtrl : MyBehaviour
         return points[index].position;
     }
 }
+
