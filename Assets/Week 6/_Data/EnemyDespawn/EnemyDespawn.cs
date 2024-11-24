@@ -5,4 +5,8 @@ using System;
 
 public class EnemyDespawn : Despawn<EnemyCtrl> 
 {
+    private void OnEnable()
+    {
+        this.isDespawnByTime = false;
+    }
 }

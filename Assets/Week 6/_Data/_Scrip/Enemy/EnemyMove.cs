@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -46,6 +46,7 @@ public class EnemyMove : EnemyAbstract
         this.currentPoint = this.pathCtrl.GetPoint(currnetPointIndex);
         this.GetNextPoint();
         this.enemyCtrl.Agent.SetDestination(currentPoint);
+
     }
     protected virtual bool IsDeath()
     {

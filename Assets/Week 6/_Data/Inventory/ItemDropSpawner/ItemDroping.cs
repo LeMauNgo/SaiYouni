@@ -23,7 +23,7 @@ public class ItemDroping : MyBehaviour
     {
         if (this.ctrl != null) return;
         this.ctrl = GetComponentInParent<ItemDropCtrl>();
-        Debug.Log(transform.name + ": LoadCtrl", gameObject);
+        Debug.LogWarning(transform.name + ": LoadCtrl", gameObject);
     }
 
     protected virtual void Droping()

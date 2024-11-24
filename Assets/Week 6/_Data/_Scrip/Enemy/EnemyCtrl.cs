@@ -34,6 +34,6 @@ public abstract class EnemyCtrl : PoolObj
     {
         if (damageReceiver != null) return;
         this.damageReceiver = GetComponentInChildren<EnemyDamageReceiver>();
-        Debug.Log("LoadAnimator", gameObject);
+        Debug.Log("LoadEnemyDamageReceiver", gameObject);
     }
 }
