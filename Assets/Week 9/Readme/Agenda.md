@@ -1,11 +1,7 @@
 # Agenda Phát Triển Game Week 9
 
-## 1. Ôn Lại Các Kỹ Năng Đã Học
+# Phần này làm thêm trong project bạn học với anh Sai ở T7 hằng tuần
 
-### Kiến Thức Cơ Bản:
+## 1. Ôn lại các kỹ năng đã học, tạo dự án mới làm lại từ buổi 1
 
-## 2. Tạo Dự Án Mới Và Làm Lại Từ Buổi 1
-
-- Mở Unity và chọn **New Project**.
-- Đặt tên dự án mới và chọn **3D template** (hoặc 2D nếu cần).
-- Thiết lập scene đầu tiên với mặt đất và các vật thể cơ bản như Player và môi trường.
+## 2. Game của bạn có thể xữ lý tối đa bao nhiêu quái?
