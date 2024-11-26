@@ -12,7 +12,7 @@ public class EnemyMove : EnemyAbstract
     [SerializeField] protected float pointDistanceMin = 1;
     [SerializeField] protected bool isFinish;
     [SerializeField] protected bool canMove;
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         this.currnetPointIndex = 0;
     }
