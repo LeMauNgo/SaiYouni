@@ -10,4 +10,5 @@ public class ItemProfileSO : ScriptableObject
     public Sprite logo;
     public bool isStackable = false;
     public int maxStack = 99;
+
 }

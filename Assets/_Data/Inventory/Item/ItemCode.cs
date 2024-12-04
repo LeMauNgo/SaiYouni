@@ -12,5 +12,7 @@ public enum ItemCode
     Wand = 100,
     Pistol = 101,
     Crossbow = 102,
+    ShotGun = 103,
+
     PotionMana = 200,
 }

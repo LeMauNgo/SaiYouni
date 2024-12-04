@@ -12,6 +12,7 @@ public class EnemyDamageReceiver : DamageReceiver
         base.LoadComponent();
         this.LoadCapsuleCollider();
         this.LoadEnemyCtrl();
+
     }
     protected virtual void LoadEnemyCtrl()
     {

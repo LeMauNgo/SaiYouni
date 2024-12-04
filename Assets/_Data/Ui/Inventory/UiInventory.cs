@@ -15,6 +15,7 @@ public class UiInventory : MySingleton<UiInventory>
     protected virtual void FixedUpdate()
     {
         this.ItemsUpdating();
+
     }
 
     protected virtual void LateUpdate()

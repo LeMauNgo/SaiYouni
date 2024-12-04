@@ -24,6 +24,7 @@ public class BtnItemInventory : BtnAbstract
         this.LoadItemNameTxt();
         this.LoadItemCountTxt();
         this.LoadLogo();
+
     }
     protected virtual void LoadItemNameTxt()
     {

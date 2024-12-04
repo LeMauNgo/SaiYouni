@@ -19,6 +19,7 @@ public class InputHotkeys : MySingleton<InputHotkeys>
         this.OpenInventory();
         this.ToogleMusic();
         this.ToogleSetting();
+
     }
 
     protected virtual void OpenInventory()
