@@ -11,12 +11,23 @@ public abstract class EnemyCtrl : PoolObj
     public Animator Animator => animator;
     [SerializeField] protected EnemyDamageReceiver damageReceiver;
     public EnemyDamageReceiver EnemyDamageReceiver => damageReceiver;
+    [SerializeField] protected EnemyLevel enemyLevel;
+    public EnemyLevel EnemyLevel => enemyLevel;
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
         this.LoadAgent();
         this.LoadAnimator();
         this.LoadEnemyDamageReceiver();
+        this.LoadEnemyLevel();
+
+    }
+    protected virtual void LoadEnemyLevel()
+    {
+        if (this.enemyLevel != null) return;
+        this.enemyLevel = GetComponentInChildren<EnemyLevel>();
+        Debug.LogWarning(gameObject.name + " LoadEnemyLevel", gameObject);
     }
     void LoadAgent()
     {

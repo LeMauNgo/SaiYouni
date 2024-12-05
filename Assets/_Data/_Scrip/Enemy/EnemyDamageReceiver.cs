@@ -42,6 +42,7 @@ public class EnemyDamageReceiver : DamageReceiver
         ItemDropSpawnerCtrl.Instance.DropMany(ItemCode.Wand, transform.position, 1);
         ItemDropSpawnerCtrl.Instance.DropMany(ItemCode.Pistol, transform.position, 1);
         ItemDropSpawnerCtrl.Instance.DropMany(ItemCode.Crossbow, transform.position, 1);
+        ItemDropSpawnerCtrl.Instance.DropMany(ItemCode.ShotGun, transform.position, 1);
         InventoriesManager.Instance.AddItem(ItemCode.PlayerExp, 1);
     }
     protected virtual void DoDespawn()
